@@ -1,0 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+li{
+    list-style: none;
+    display: inline;
+}
+
+a{
+    text-decoration: none;
+}

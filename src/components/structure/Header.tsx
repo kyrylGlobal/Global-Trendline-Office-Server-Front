@@ -1,6 +1,6 @@
 import { FC } from "react";
-import StyledNavLink from "./styles/Reusable/StyledNavLink.styled";
-import HeaderStyledComponent from "./styles/Custom/HeaderStyledComponent.styled";
+import HeaderStyledComponent from "../styles/Custom/HeaderStyledComponent.styled";
+import StyledNavLink from "../styles/Reusable/StyledNavLink.styled";
 
 const Header:FC = () => {
     return (

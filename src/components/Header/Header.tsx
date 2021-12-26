@@ -7,10 +7,10 @@ const Header:FC = () => {
             <nav>
                 <ul>
                     <li>
-                        <StyledNavLink color="red" to="/News" >News</StyledNavLink>
+                        <StyledNavLink color="black" to="/News" >News</StyledNavLink>
                     </li>
                     <li>
-                        <StyledNavLink color="red" to="/Login" >Login</StyledNavLink>
+                        <StyledNavLink color="black" to="/Login" >Login</StyledNavLink>
                     </li>
                 </ul>
             </nav>

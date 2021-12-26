@@ -1,13 +1,14 @@
 import { FC } from "react";
+import FooterStyledComponent from "./styles/Custom/FooterStyledComponent.styled";
 
 const Footer:FC = () => {
 
     return(
-        <footer>
+        <FooterStyledComponent>
             <nav>
                 Footer
             </nav>
-        </footer>
+        </FooterStyledComponent>
     );
 }
 

@@ -1,9 +1,10 @@
 import { FC } from "react";
-import StyledNavLink from "../styles/StyledNavLink.styled";
+import StyledNavLink from "./styles/Reusable/StyledNavLink.styled";
+import HeaderStyledComponent from "./styles/Custom/HeaderStyledComponent.styled";
 
 const Header:FC = () => {
     return (
-        <header>
+        <HeaderStyledComponent>
             <nav>
                 <ul>
                     <li>
@@ -14,7 +15,7 @@ const Header:FC = () => {
                     </li>
                 </ul>
             </nav>
-        </header>
+        </HeaderStyledComponent>
     );
 }
 

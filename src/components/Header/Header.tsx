@@ -1,16 +1,17 @@
 import { FC } from "react";
-import { NavLink } from "react-router-dom";
-import "./Header.css";
+import StyledNavLink from "../styles/StyledNavLink.styled";
 
 const Header:FC = () => {
     return (
-        <header className="header">
+        <header>
             <nav>
                 <ul>
                     <li>
-                        <NavLink className={(navData) => navData.isActive ? "": ""} to="/News">News</NavLink>
+                        <StyledNavLink color="red" to="/News" >News</StyledNavLink>
                     </li>
-                    <li>Login</li>
+                    <li>
+                        <StyledNavLink color="red" to="/Login" >Login</StyledNavLink>
+                    </li>
                 </ul>
             </nav>
         </header>

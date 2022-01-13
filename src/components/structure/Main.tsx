@@ -1,13 +1,21 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import News from "../pages/News/News";
+import Editing from "../pages/Editing";
+import Login from "../pages/Login";
+import News from "../pages/News";
+import RaportsEditing from "../pages/RaportsEditing";
 import MainStyledComponent from "../styles/Reusable/MainStyledComponent.styled";
 
 const Main = () => {
     return (
         <MainStyledComponent padding="50px">
           <Routes>
-              <Route path="/" element={<Navigate  to="/News"/>} />
-              <Route path="/News" element={<News />} />
+              <Route path="/" element={<Navigate  to="/news"/>} />
+              <Route path="/news" element={<News />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/editing" element={<Editing />} >
+                  <Route path="/editing/raports" element={<RaportsEditing />}/>
+                  <Route path="/editing/*" element={<span>No way!</span>}/>
+              </Route>
           </Routes>
         </MainStyledComponent>
     );

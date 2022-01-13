@@ -7,7 +7,7 @@ import AppStyledComponent from "./styles/Reusable/AppStyledComponent.styled";
 
 const App:FC = () => {
   return (
-    <AppStyledComponent headerHeight="15vh" mainHeight="minmax(85vh, auto)" footerHeight="10vh">
+    <AppStyledComponent headerHeight="8vh" mainHeight="minmax(92vh, auto)" footerHeight="8vh">
       <BrowserRouter>
         <Header />
         <Main />

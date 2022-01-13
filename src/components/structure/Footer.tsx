@@ -4,7 +4,7 @@ import FooterStyledComponent from "../styles/Custom/FooterStyledComponent.styled
 const Footer:FC = () => {
 
     return(
-        <FooterStyledComponent>
+        <FooterStyledComponent backgroundColor="#918622">
             <nav>
                 Footer
             </nav>

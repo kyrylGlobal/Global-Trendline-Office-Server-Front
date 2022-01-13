@@ -4,14 +4,17 @@ import StyledNavLink from "../styles/Reusable/StyledNavLink.styled";
 
 const Header:FC = () => {
     return (
-        <HeaderStyledComponent>
+        <HeaderStyledComponent backgroundColor="#d16b6b">
             <nav>
                 <ul>
                     <li>
-                        <StyledNavLink color="black" to="/News" >News</StyledNavLink>
+                        <StyledNavLink color="black" to="/news">News</StyledNavLink>
                     </li>
                     <li>
-                        <StyledNavLink color="black" to="/Login" >Login</StyledNavLink>
+                        <StyledNavLink color="black" to="/login">Login</StyledNavLink>
+                    </li>
+                    <li>
+                        <StyledNavLink color="black" to="/editing">Raports Editing</StyledNavLink>
                     </li>
                 </ul>
             </nav>

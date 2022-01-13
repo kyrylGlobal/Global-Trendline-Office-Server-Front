@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const DEFAULT_BACKGROUND_COLOR: string = "white";
+const DEFAULT_BACKGROUND_COLOR: string = "none";
 
 interface IFooterStyledComponent{
     height?: number;

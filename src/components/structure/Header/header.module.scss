@@ -1,0 +1,56 @@
+@import '../../../styles/variables.scss';
+
+.header{
+    background-color: $header-background-color;
+
+    nav{
+        margin: $header-content-margin;
+
+        ul{
+            display: flex;
+            flex-direction: row;
+
+            li{
+
+                display: flex;
+                align-items: center;
+
+                a{
+                    width: fit-content;
+                    height: fit-content;
+
+                    span{
+                        width: fit-content;
+                        height: fit-content;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.activeNavLink{
+    text-decoration: underline;
+    color: white;
+}
+
+.navLink{
+    color: white;
+}
+
+.logoLi{
+    justify-content: flex-start;
+    flex-grow: 12;
+    a{
+        font-size: 25px;
+    }
+}
+
+.secondariesLi{
+    justify-content: center;
+    flex-grow: 1;
+    flex
+    a{
+        font-size: 18px;
+    }
+}

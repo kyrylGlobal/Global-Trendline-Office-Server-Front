@@ -3,7 +3,7 @@ import { FC } from "react";
 const News:FC = () => {
     return(
         <>
-            News
+        <h1>HAVE A GOOD DAY :)</h1>
         </>
     );
 }

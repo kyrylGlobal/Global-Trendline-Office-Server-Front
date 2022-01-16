@@ -1,19 +1,19 @@
 import { BrowserRouter } from "react-router-dom";
 import { FC } from "react";
-import Header from "./structure/Header";
-import Main from "./structure/Main";
-import Footer from "./structure/Footer";
-import AppStyledComponent from "./styles/Reusable/AppStyledComponent.styled";
+import Header from "./structure/Header/Header";
+import Main from "./structure/Main/Main";
+import Footer from "./structure/Footer/Footer";
+import styles from './app.module.scss';
 
 const App:FC = () => {
   return (
-    <AppStyledComponent headerHeight="8vh" mainHeight="minmax(92vh, auto)" footerHeight="8vh">
+    <div className={styles.app}>
       <BrowserRouter>
         <Header />
         <Main />
         <Footer />
       </BrowserRouter>
-    </AppStyledComponent>
+    </div>
   );
 }
 

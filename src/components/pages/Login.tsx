@@ -2,7 +2,7 @@ import { FC } from "react";
 
 const Login: FC = () => {
     return (
-        <>Login</>
+        <>Login page (In development)</>
     );
 }
 

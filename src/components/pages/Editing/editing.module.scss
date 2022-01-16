@@ -1,0 +1,38 @@
+.editingNav{
+    margin: 0 0 20px 0;
+
+    ul{
+        display: flex;
+        height: fit-content;
+        gap: 12px;
+
+        li{
+            flex-basis: 100%;
+            
+            a{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                padding: 20px;
+                box-sizing: border-box;
+                border-radius: 5px;
+                box-shadow: 0 0 5px rgb(58, 58, 58);
+                font-weight: 700;
+
+                &:hover{
+                    box-shadow: 0 0 10px rgb(58, 58, 58);
+                }
+            }
+        }
+    }
+
+    .activeEditingNavLink{
+        background-color: #3963be;
+        color: white;
+    }
+
+    .editingNavLink{
+        background-color: #5d7ab9;
+        color: black;
+    }
+}

@@ -1,14 +1,15 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import Editing from "../pages/Editing";
-import Login from "../pages/Login";
-import News from "../pages/News";
-import RaportsEditing from "../pages/RaportsEditing";
-import MainStyledComponent from "../styles/Reusable/MainStyledComponent.styled";
+import Info from "../../additional/Info/Info";
+import Editing from "../../pages/Editing/Editing";
+import Login from "../../pages/Login";
+import News from "../../pages/News";
+import RaportsEditing from "../../pages/RaportEditing/RaportsEditing";
+import styles from './main.module.scss';
 
 const Main = () => {
     return (
-        <MainStyledComponent padding="50px">
-          <Routes>
+        <main className={styles.main}>
+            <Routes>
               <Route path="/" element={<Navigate  to="/news"/>} />
               <Route path="/news" element={<News />} />
               <Route path="/login" element={<Login />} />
@@ -17,7 +18,8 @@ const Main = () => {
                   <Route path="/editing/*" element={<span>No way!</span>}/>
               </Route>
           </Routes>
-        </MainStyledComponent>
+          <Info />
+        </main>
     );
 }
 

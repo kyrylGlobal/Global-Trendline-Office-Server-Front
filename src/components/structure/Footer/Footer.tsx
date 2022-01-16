@@ -1,5 +1,5 @@
 import { FC } from "react";
-import FooterStyledComponent from "../styles/Custom/FooterStyledComponent.styled";
+import FooterStyledComponent from "../../styles/Custom/FooterStyledComponent.styled";
 
 const Footer:FC = () => {
 

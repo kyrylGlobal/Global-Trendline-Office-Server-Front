@@ -14,6 +14,8 @@ export const salesRaportReducer = (state = initialState, action: SalesRaportActi
             return {...state, resultFile: action.resultFile, loading: false, error: null};
         case SalesRaportActionTypes.FETCH_USER_ERROR:
             return {...state, loading: false, resultFile: null, error: action.message};
+        case SalesRaportActionTypes.CLEAN_STORE:
+            return {...state, loading: false, resultFile: null, error: null}
         default:
             return state;
     }

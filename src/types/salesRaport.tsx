@@ -4,10 +4,14 @@ export interface SalesRaportState {
     error?: string | null
 }
 
-export type SalesRaportAction = FetchUserAction | FetchUserActionSuccess | FetchUserActionError;
+export type SalesRaportAction = FetchUserAction | FetchUserActionSuccess | FetchUserActionError | ClearStoreAction;
 
 interface FetchUserAction{
     type: SalesRaportActionTypes.FETCH_USER_ACTION
+}
+
+export interface ClearStoreAction{
+    type: SalesRaportActionTypes.CLEAN_STORE
 }
 
 interface FetchUserActionSuccess{
@@ -23,7 +27,8 @@ interface FetchUserActionError{
 export enum SalesRaportActionTypes{
     FETCH_USER_ACTION="FETCH_USER_ACTION",
     FETCH_USER_SUCCESS="FETCH_USER_SUCCESS",
-    FETCH_USER_ERROR="FETCH_USER_ERROR"
+    FETCH_USER_ERROR="FETCH_USER_ERROR",
+    CLEAN_STORE="CLEAN_STORE"
 }
 
 export interface ResultSalesRaportFile{

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Dispatch } from "react";
-import { SalesRaportAction, SalesRaportActionTypes } from "../../types/salesRaport";
+import { ClearStoreAction, SalesRaportAction, SalesRaportActionTypes } from "../../types/salesRaport";
 import { generateResutObject, saveFile } from "../../utils/saveFile";
 
 export function postSalesRaportFile(file: File){
@@ -20,5 +20,11 @@ export function postSalesRaportFile(file: File){
         catch(error: any | undefined){
             dispatch({type: SalesRaportActionTypes.FETCH_USER_ERROR, message: error.response.data.message});
         }
+    }
+}
+
+export function clearSalesRaportStore(): ClearStoreAction{
+    return {
+        type: SalesRaportActionTypes.CLEAN_STORE
     }
 }

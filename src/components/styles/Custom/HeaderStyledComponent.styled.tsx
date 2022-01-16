@@ -12,6 +12,12 @@ const HeaderStyledComponent = styled.header<IHeaderStyledComponent>`
     height: 100%;
     background-color: ${({backgroundColor}) => backgroundColor ? backgroundColor : DEFAULT_BACKGROUND_COLOR};
     box-sizing: border-box;
+    display: grid;
+    position: relative;
+    box-sizing: border-box;
+    /* @media  (min-width: 1000px){
+        background-color: red;
+    } */
 `;
 
 export default HeaderStyledComponent;

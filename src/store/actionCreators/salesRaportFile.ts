@@ -9,7 +9,8 @@ export function postSalesRaportFile(file: File){
             dispatch({type: SalesRaportActionTypes.FETCH_USER_ACTION});
             const data = new FormData();
             data.append("raport", file);
-            const response = await axios.post('http://localhost:5000/api/raport/sales', data);
+            let mode = process.env.REACT_APP_MODE?.replace(" ", "");
+            const response = await axios.post(`http://${mode === "production" ? "192.168.1.150:5000" : "localhost:5000"}/api/raport/sales`, data);
             saveFile(file.name, response.data);
             dispatch(
                 {

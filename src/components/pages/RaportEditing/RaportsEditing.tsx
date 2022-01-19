@@ -21,7 +21,7 @@ const RaportsEditing = () => {
 
     let [resultLocalFile, setresultLocalFile] = useState<ResultSalesRaportFile | null>(null);
 
-    const responses = (resultFile: ResultSalesRaportFile | null | undefined, error: string | null | undefined, loading: boolean | undefined) => {
+    useEffect(() => {
         if(resultFile){
             setresultLocalFile(resultFile);
             dispatch(InfoAC.showMessage("Success :)"));
@@ -34,11 +34,7 @@ const RaportsEditing = () => {
         if(loading && !resultFile){
             dispatch(InfoAC.showMessage("Loading..."));
         }
-    }
-
-    useEffect(() => {
-        responses(resultFile, error, loading);
-    },[resultFile, error, loading, responses])
+    },[resultFile, error, loading, dispatch])
 
     return(
         <section>

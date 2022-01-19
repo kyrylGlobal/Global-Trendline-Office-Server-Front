@@ -15,6 +15,7 @@
     "@types/react-router-dom": "^5.3.2",
     "@types/styled-components": "^5.1.19",
     "axios": "^0.24.0",
+    "cross-env": "^7.0.3",
     "node-sass": "^7.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -28,7 +29,8 @@
     "web-vitals": "^2.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set REACT_APP_MODE=production && react-scripts start",
+    "dev": "set REACT_APP_MODE=development &&  react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

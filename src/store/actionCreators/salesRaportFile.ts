@@ -9,7 +9,7 @@ export function postSalesRaportFile(file: File){
             dispatch({type: SalesRaportActionTypes.FETCH_USER_ACTION});
             const data = new FormData();
             data.append("raport", file);
-            const response = await axios.post('http://localhost:5000/api/raport/sales', data);
+            const response = await axios.post('http://192.168.1.230:5000/api/raport/sales', data);
             saveFile(file.name, response.data);
             dispatch(
                 {

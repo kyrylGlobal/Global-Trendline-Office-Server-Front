@@ -4,6 +4,7 @@ import Editing from "../../pages/Editing/Editing";
 import Login from "../../pages/Login";
 import News from "../../pages/News";
 import RaportsEditing from "../../pages/RaportEditing/RaportsEditing";
+import RaportEditiongInstructions from "../../pages/RaportEditing/RaportEditingInstructions/RaportEditingInstructions";
 import styles from './main.module.scss';
 
 const Main = () => {
@@ -14,7 +15,7 @@ const Main = () => {
               <Route path="/news" element={<News />} />
               <Route path="/login" element={<Login />} />
               <Route path="/editing" element={<Editing />} >
-                  <Route path="/editing/raports" element={<RaportsEditing />}/>
+                  <Route path="/editing/raports" element={<RaportsEditing/>} />
                   <Route path="/editing/*" element={<span>No way!</span>}/>
               </Route>
           </Routes>

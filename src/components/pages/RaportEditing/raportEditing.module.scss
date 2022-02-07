@@ -1,3 +1,19 @@
 .raportEditing{
-    
+    button {
+        border: none;
+        padding: 4px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .showInstructionsBtn {
+        background-image: linear-gradient(rgb(0, 130, 170), rgb(2, 88, 114));
+        box-shadow: 2px 2px 5px black;
+        margin-top: 10px;
+        color: white;
+        transition: 0.5s;
+        &:hover {
+            box-shadow: 3px 3px 7px black;
+        }
+    }
 }

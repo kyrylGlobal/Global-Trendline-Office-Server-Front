@@ -1,0 +1,47 @@
+.instruction {
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+    color: white;
+    box-sizing: border-box;
+    border-radius: 10px;
+
+    .content {
+        width: fit-content;
+        background-color: rgb(37, 134, 179);
+        cursor: pointer;
+        padding: 10px;
+        box-shadow: 0 0 8px gray;
+        border-radius: 10px;
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                            supported by Chrome, Edge, Opera and Firefox */
+    }
+    .showSubContentBtn {
+        height: fit-content;
+        color: #2586b3;
+        font-weight: bold;
+    }
+    .subContent {
+        padding-left: 20px;
+        padding-top: 10px;
+        animation: showSub 0.5s;
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        border-left: rgb(37, 134, 179) 2px dotted;
+        
+        @keyframes showSub {
+            from {
+                opacity: 0;
+            }
+            to {
+                opasity: 1;
+            }
+        }
+    }
+}

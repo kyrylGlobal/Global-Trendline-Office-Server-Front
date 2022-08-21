@@ -1,0 +1,84 @@
+.bStatisticSection {
+    display: grid;
+    grid-auto-rows: auto;
+}
+
+.showFiltersBtn {
+    justify-self: center;
+}
+
+.filter {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.getDates {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.getStatisticBtn {
+    justify-self: center;
+    align-self: center;
+}
+
+.statusesList {
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.statusesListHelper::-webkit-scrollbar {
+    display: none;
+}
+
+.statusesListHelper {
+    margin-top: 3px;
+    border: rgb(55, 194, 189) 1px solid;
+    resize: vertical;
+    overflow: scroll;
+    height: 200px;
+}
+
+.statuses {
+    justify-self: center;
+    align-self: center;
+    position: relative;
+}
+
+.setStatusesInput {
+
+}
+
+.setStatuses {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.setStatuses label {
+    justify-self: center;
+}
+
+.setStatusesInputHelper {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 2px;
+}
+
+.results {
+    display: grid;
+    grid-auto-rows: min-content;
+    margin-top: 20px;
+}
+
+.showDiagrams {
+    justify-self: center;
+}
+
+.resultsOptions {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto auto;
+    column-gap: 20px;
+}

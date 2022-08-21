@@ -1,0 +1,22 @@
+.doughnutStatistic {
+    display: grid;
+    max-width: 500px;
+    justify-self: center;
+}
+
+.doughnutStatistic h1 {
+    justify-self: center;
+}
+
+.doughnuts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 50px;
+    margin-top: 20px;
+}
+
+.allOrdersDoughnut {
+    grid-column: 1/3;
+    width: 50%;
+    justify-self: center;
+}

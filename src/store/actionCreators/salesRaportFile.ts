@@ -10,7 +10,7 @@ export function postSalesRaportFile(file: File){
             const data = new FormData();
             data.append("raport", file);
             let mode = process.env.REACT_APP_MODE?.replace(" ", "");
-            const response = await axios.post(`http://${mode === "production" ? "192.168.1.230:5000" : "localhost:5000"}/api/raport/sales`, data);
+            const response = await axios.post(`${mode === "production" ? "https://sleepy-savannah-27109.herokuapp.com" : "http://localhost:5000"}/api/raport/sales`, data);
             saveFile(file.name, response.data);
             dispatch(
                 {

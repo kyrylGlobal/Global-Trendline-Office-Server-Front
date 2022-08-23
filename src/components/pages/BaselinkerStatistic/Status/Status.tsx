@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useTypedSelector } from "../../../../hooks/useTypedSelector";
 import { setStatisticPostParams } from "../../../../store/actionCreators/bStatisticAC";

@@ -1,5 +1,4 @@
-import { stat } from "fs";
-import React, { memo, MouseEventHandler, ReactHTMLElement, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useTypedSelector } from "../../../hooks/useTypedSelector";
 import { getStatisticOrders, sendStatisticToGoogleSheet, setStatisticPostParams } from "../../../store/actionCreators/bStatisticAC";
@@ -24,7 +23,7 @@ const BaselinkerStatistic = () => {
 
     useEffect(() => {
         dispatch(fetchStatuses());
-    },[])
+    }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
     const resetStatuses = () => {
         setSearchStatus("");

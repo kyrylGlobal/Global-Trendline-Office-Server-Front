@@ -2,7 +2,6 @@ import { useTypedSelector } from "../../../../hooks/useTypedSelector";
 import styles from "./statisticResult.module.css";
 import { Doughnut} from "react-chartjs-2";
 import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
-import {useMemo} from 'react';
 
 Chart.register(ArcElement, Tooltip, Legend);
 
@@ -10,20 +9,6 @@ const StatisticResult = () => {
     let {statistic} = useTypedSelector(state => state.bStatistic)
     const backgroundColor = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange', "Violet", "Grey"];
     const heaterColor: any = {"kominek" : "red", "harmony": "blue", "orchid": "green", "dove": "yellow", "village": "purple"}
-
-    const generateAllOrdersParams = (apiBStatistic: any): any => {
-        let labels = Object.keys(apiBStatistic);
-        const data = labels.map( (country: string) => {
-            return apiBStatistic[country].orders
-        });
-        let allOrders = 0;
-        labels.forEach( country => allOrders += apiBStatistic[country].orders);
-        labels = labels.map( country => (`${country}(${(apiBStatistic[country].orders * 100 / allOrders).toFixed(2)}%)`));
-        return {
-            labels,
-            datasets: [{data, backgroundColor, label: "All Orders Sattistic"}]
-        }
-    }
 
     const generateLookingOrdersParams = (apiBStatistic: any): any => {
         let labels = Object.keys(apiBStatistic);

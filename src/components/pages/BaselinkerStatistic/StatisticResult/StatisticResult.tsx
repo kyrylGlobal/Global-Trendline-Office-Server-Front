@@ -2,6 +2,7 @@ import { useTypedSelector } from "../../../../hooks/useTypedSelector";
 import styles from "./statisticResult.module.css";
 import { Doughnut} from "react-chartjs-2";
 import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
+import { useMemo } from "react";
 
 Chart.register(ArcElement, Tooltip, Legend);
 
@@ -38,6 +39,7 @@ const StatisticResult = () => {
             productLabels.forEach( product => allProducts += countryObj.products[product]);
 
             productLabels = productLabels.map( product => (`${product}(${(countryObj.products[product] * 100 / allProducts).toFixed(2)}%)`));
+            console.log(productLabels)
             const finalData: any = {
                 labels: productLabels,
                 datasets: [{data, backgroundColor: colors}]
@@ -46,7 +48,7 @@ const StatisticResult = () => {
             console.log(finalData);
             return (
                 <div className={styles.doughnutStatistic} key={`${country}`}>
-                    <h1>{country} heaters</h1>
+                    <h1>{country} heaters (Heater orders for country {statistic[country].ordersWithConfigProducts})</h1>
                     <Doughnut data={finalData}/>
                 </div>
             )
@@ -55,14 +57,21 @@ const StatisticResult = () => {
         return result
     }
 
+    const useGetHeaterOrdersCount = () => {
+        return useMemo(() => {
+            let count = 0;
+            for(let country of Object.keys(statistic)) {
+                count += statistic[country].ordersWithConfigProducts;
+            }
+    
+            return count;
+        }, [statistic])
+    }
+
     return (
         <section className={styles.doughnuts}>
-            {/* <div className={styles.allOrdersStatistic}>
-                <h1>All orders</h1>
-                <Doughnut data={useMemo(() => generateAllOrdersParams(statistic), [])}/>
-            </div> */}
             <div className={`${styles.doughnutStatistic} ${styles.allOrdersDoughnut}`}>
-                <h1>Heater orders</h1>
+                <h1>Heater orders ({useGetHeaterOrdersCount()})</h1>
                 <Doughnut data={generateLookingOrdersParams(statistic)}/>
             </div>
             {generateProductChartsByCountry(statistic)}

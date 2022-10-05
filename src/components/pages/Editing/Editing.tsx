@@ -18,6 +18,11 @@ const Editing: FC = () => {
                         </NavLink>
                     </li>
                     <li>
+                        <NavLink to="/editing/scanner" className={(navData) => navData.isActive ? styles.activeEditingNavLink : styles.editingNavLink}>
+                                <span>Scanner</span>
+                        </NavLink>
+                    </li>
+                    <li>
                         <NavLink to="/editing/another" className={(navData) => navData.isActive ? styles.activeEditingNavLink : styles.editingNavLink}>
                                 <span>Another...(in development)</span>
                         </NavLink>

@@ -13,7 +13,6 @@ export const getStatisticOrders = (statisticPostParams: StatisticPostParams) => 
     return async (dispatch: Dispatch<StatisticAction>) => {
         let mode = process.env.REACT_APP_MODE?.replace(" ", "");
         const response = await axios.post(`${mode === "production" ? "https://sleepy-savannah-27109.herokuapp.com" : "http://localhost:5000"}/api/baselinker/statistic/get`, statisticPostParams);
-        console.log(response.data);
         dispatch({type: StatisticActionTypes.SET_STATISTIC, body: response.data});
     }
 }

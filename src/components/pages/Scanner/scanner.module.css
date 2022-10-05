@@ -1,0 +1,49 @@
+.barcode {
+    font-weight: bold; margin: auto; width: 50vw; display: block; text-align: center;
+}
+
+.clean:hover {
+    background-color: rgb(117, 212, 234);
+    box-shadow: 0 0 10px rgb(117, 212, 234);
+    background-image: linear-gradient(to left, rgb(195, 0, 255), blue);
+}
+
+.clean {
+    font-weight: bold; 
+    margin: auto; 
+    display: block; 
+    text-align: center; 
+    width: 100px; 
+    height: 50px; 
+    font-size: 20px; 
+    border-radius: 20px;
+    border: none;
+    background-image: linear-gradient(to left, rgb(195, 0, 255), rgb(78, 78, 214));
+    transition: 0.3s;
+}
+
+.sendingInfo {
+    width: 50vw;
+    display: block;
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.useScannerCheckBox {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 10px;
+    justify-content: center;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+  }

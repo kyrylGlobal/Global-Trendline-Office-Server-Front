@@ -25,6 +25,34 @@ const StatisticResult = () => {
         }
     }
 
+    const generateLookingPcsParams = (apiBStatistic: any): any => {
+        let heatersPcs = Object.keys(apiBStatistic).reduce( (prevObj: any, cur) => {
+            const countryProducts = apiBStatistic[cur].products;
+            const productsNamesArr = Object.keys(countryProducts);
+            return productsNamesArr.reduce((obj, prodCurName) => {
+                obj[prodCurName] ? obj[prodCurName] += countryProducts[prodCurName] : obj[prodCurName] = countryProducts[prodCurName]
+                return obj
+            }, prevObj)
+        }, {})
+        
+        let data = Object.keys(heatersPcs).map( productName => heatersPcs[productName]);
+        let heatersSum = getHeatersSum(data);
+        let dataPercent = data.map( e =>  Number.parseFloat((e * 100 / heatersSum).toFixed(2))); 
+        // console.log("New data",heatersPcs, data, heatersSum)
+        //------------------------------
+        let labels = Object.keys(heatersPcs);
+        let colors = labels.map( product => heaterColor[product])
+        labels = labels.map( (l, i) => `${l} - ${dataPercent[i]}%`)
+        return {
+            labels,
+            datasets: [{data, backgroundColor: colors,}]
+        }
+    }
+
+    const getHeatersSum = (heaters: any[]) => {
+        return heaters.reduce( (prev, cur) => prev + cur, 0)
+    }
+
     const generateProductChartsByCountry = (apiBStatistic: any): JSX.Element[] => {
         let labels = Object.keys(apiBStatistic);
         let result = labels.map((country: string) => {
@@ -38,14 +66,11 @@ const StatisticResult = () => {
             let allProducts = 0;
             productLabels.forEach( product => allProducts += countryObj.products[product]);
 
-            productLabels = productLabels.map( product => (`${product}(${(countryObj.products[product] * 100 / allProducts).toFixed(2)}%)`));
-            console.log(productLabels)
+            productLabels = productLabels.map( (product, index) => (`${product}(${(countryObj.products[product] * 100 / allProducts).toFixed(2)}%)(${data[index]} pcs)`));
             const finalData: any = {
                 labels: productLabels,
                 datasets: [{data, backgroundColor: colors}]
             }
-            console.log(country);
-            console.log(finalData);
             return (
                 <div className={styles.doughnutStatistic} key={`${country}`}>
                     <h1>{country} heaters (Heater orders for country {statistic[country].ordersWithConfigProducts})</h1>
@@ -53,7 +78,6 @@ const StatisticResult = () => {
                 </div>
             )
         })
-        console.log("Before return")
         return result
     }
 
@@ -63,7 +87,19 @@ const StatisticResult = () => {
             for(let country of Object.keys(statistic)) {
                 count += statistic[country].ordersWithConfigProducts;
             }
-    
+            
+            return count;
+        }, [statistic])
+    }
+
+    const useGetHeatersPcs = () => {
+        return useMemo(() => {
+            let count = 0;
+            for(let country of Object.keys(statistic)) {
+                for(let product of Object.keys(statistic[country].products)) {
+                    count += statistic[country].products[product]
+                }
+            }
             return count;
         }, [statistic])
     }
@@ -73,6 +109,10 @@ const StatisticResult = () => {
             <div className={`${styles.doughnutStatistic} ${styles.allOrdersDoughnut}`}>
                 <h1>Heater orders ({useGetHeaterOrdersCount()})</h1>
                 <Doughnut data={generateLookingOrdersParams(statistic)}/>
+            </div>
+            <div className={`${styles.doughnutStatistic} ${styles.allOrdersDoughnut}`}>
+                <h1>Heater pcs.{useGetHeatersPcs()}</h1>
+                <Doughnut data={generateLookingPcsParams(statistic)}/>
             </div>
             {generateProductChartsByCountry(statistic)}
         </section>

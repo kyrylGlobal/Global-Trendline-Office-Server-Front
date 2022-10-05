@@ -20,3 +20,9 @@
     width: 50%;
     justify-self: center;
 }
+
+.allHeatersDoughnut {
+    grid-column: 1/3;
+    width: 50%;
+    justify-self: center;
+}

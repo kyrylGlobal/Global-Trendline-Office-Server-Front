@@ -3,14 +3,15 @@ import { Dispatch } from "react";
 import { ClearStoreAction, SalesRaportAction, SalesRaportActionTypes } from "../../types/salesRaport";
 import { generateResutObject, saveFile } from "../../utils/saveFile";
 
-export function postSalesRaportFile(file: File){
+export function postSalesRaportFile(file: File, useNewVersion: boolean){
     return async (dispatch: Dispatch<SalesRaportAction>) => {
-        try{
+        try {
             dispatch({type: SalesRaportActionTypes.FETCH_USER_ACTION});
             const data = new FormData();
             data.append("raport", file);
+            data.append('useNewVersion', useNewVersion.toString())
             let mode = process.env.REACT_APP_MODE?.replace(" ", "");
-            const response = await axios.post(`${mode === "production" ? "https://sleepy-savannah-27109.herokuapp.com" : "http://localhost:5000"}/api/raport/sales`, data);
+            const response = await axios.post(`${mode === "production" ? "https://sleepy-savannah-27109.herokuapp.com" : "http://localhost:5001"}/api/raport/sales`, data);
             saveFile(file.name, response.data);
             dispatch(
                 {

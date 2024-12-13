@@ -39,7 +39,7 @@
   },
   "scripts": {
     "start": "node ./app.js",
-    "dev": "set REACT_APP_MODE=development &&  react-scripts start",
+    "dev": "react-scripts start",
     "build": "react-scripts build",
     "build-ts": "tsc ./app.ts",
     "test": "react-scripts test",
